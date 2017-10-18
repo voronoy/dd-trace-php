@@ -123,14 +123,22 @@ class Span
         $this->service = $service;
     }
 
-    public function type()
+    public function type($type = null)
     {
-        return $this->type;
+    	if (is_null($type)) {
+        	return $this->type;
+		} else {
+    		$this->type = $type;
+		}
     }
 
-    public function start()
+    public function start($start = null)
     {
-        return $this->start;
+    	if (is_null($start)) {
+			return $this->start;
+		} else {
+    		$this->start = $start;
+		}
     }
 
     public function duration()
