@@ -141,9 +141,13 @@ class Span
 		}
     }
 
-    public function duration()
+    public function duration($duration = null)
     {
-        return $this->duration;
+    	if (is_null($duration)) {
+			return $this->duration;
+		} else {
+			$this->duration = $duration;
+		}
     }
 
     public function getMeta($key)
