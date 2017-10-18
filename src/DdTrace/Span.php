@@ -195,7 +195,9 @@ class Span
             return;
         }
 
-        $this->duration = Nanotime::now()->diff($this->start);
+        if (is_null($this->duration)) {
+			$this->duration = Nanotime::now()->diff($this->start);
+		}
         $this->isFinished = true;
         $this->tracer->record($this);
     }
